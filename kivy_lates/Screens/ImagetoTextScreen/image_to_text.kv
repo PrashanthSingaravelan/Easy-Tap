@@ -1,0 +1,126 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+<ImagetoTextScreen>
+    name: 'imaget'
+    MDBoxLayout:
+        md_bg_color: get_color_from_hex("#EFE6DB")
+
+        FitImage:
+            source: "assets/images/top.png"
+            size_hint_y: .1
+            pos_hint:{"top": 1}
+
+    MDLabel:
+        text: "Easy Tap"
+        font_style: "H4"
+        theme_text_color: "Custom"
+        text_color: get_color_from_hex("#FFF3E4")
+        pos_hint:{"center_y":.95}
+        x:"75dp"
+
+    MDBoxLayout:
+        TextInput:
+            id:texto
+            text:"Hello this is Prashanth. j'ai faim"
+            font_style:"H4"
+
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:"translate"
+                id:"translate_id"
+                icon:"google-translate"
+                on_tab_press:root.on_tab_press("translate")
+
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+
+                        MDBoxLayout:
+                            orientation:"vertical"
+                            padding:"20dp"
+                            adaptive_height:True
+
+                            MDLabel:
+                                text:"Translate"
+                                font_style:"H2"
+                                adaptive_height:True
+
+            MDBottomNavigationItem:
+                name:"loud"
+                id:"loud_id"
+                icon:"account-voice"
+                on_tab_press:root.on_tab_press("loud")
+
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+
+                        MDBoxLayout:
+                            orientation:"vertical"
+                            padding:"20dp"
+                            adaptive_height:True
+
+                            MDLabel:
+                                text:"trending screen"
+                                font_style:"H2"
+                                adaptive_height:True
+
+            MDBottomNavigationItem:
+                name:"Copy"
+                id:"copy_id"
+                icon:"content-copy"
+                on_tab_press:root.on_tab_press("copy")
+
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+
+                        MDBoxLayout:
+                            orientation:"vertical"
+                            padding:"20dp"
+                            adaptive_height:True
+
+                            MDLabel:
+                                text:"Copy the contents"
+                                font_style:"H2"
+                                adaptive_height:True
+
+            MDBottomNavigationItem:
+                name:"Share"
+                id:"share_id"
+                icon:"share-variant"
+                on_tab_press:root.on_tab_press("share")
+
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+
+                        MDBoxLayout:
+                            orientation:"vertical"
+                            padding:"20dp"
+                            adaptive_height:True
+
+                            MDLabel:
+                                text:"Share the items"
+                                font_style:"H2"
+                                adaptive_height:True
+
+            MDBottomNavigationItem:
+                name:"img_back"
+                id:"img_back_id"
+                icon:"keyboard-return"
+                on_tab_press:root.on_tab_press("back")
+
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+
+                        MDBoxLayout:
+                            orientation:"vertical"
+                            padding:"20dp"
+                            adaptive_height:True
+
+                            MDLabel:
+                                text:"Share the items"
+                                font_style:"H2"
+                                adaptive_height:True
+                                return_button: root.return_button
